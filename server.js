@@ -5,7 +5,7 @@ const cors = require('cors')
 const generatePdf = require('./pdf-generator/pdf-generator')
 const saveEmail = require('./saveEmail')
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3008
 const dev = process.env.NODE_ENV !== 'production'
 const app = Next({ dev })
 const handle = app.getRequestHandler()
