@@ -18,7 +18,7 @@ function ShareResult({ t, encData, isLoggedIn }: IShareResult) {
                 <div className={style.desc}>{t('test:result_page.export_result_desc')}</div>
                 <div className={style.code}>
                     <CodeBox
-                        content={`https://${host}/test/result?encdata=${encData}`}
+                        content={`https://${host}/result?encdata=${encData}`}
                         btnLabel={t('test:result_page.copy_link')}
                     />
                 </div>
@@ -26,7 +26,7 @@ function ShareResult({ t, encData, isLoggedIn }: IShareResult) {
             <div className="col-sm-6">
                 <h4>{t('test:result_page.share_to_social')}</h4>
                 <div className="result-share">
-                    <SocialSharing url={`https://${host}/test/result?encdata=${encData}`} />
+                    <SocialSharing url={`https://${host}/result?encdata=${encData}`} />
                 </div>
             </div>
         </div>
