@@ -134,14 +134,9 @@ const Result: React.FC<ResultProps> = ({ t }) => {
     const secondaryOctantFraction: number | null = secondaryPsychoType
         ? getOctantFraction(sortedOctants[1], sortedOctants)
         : null
+    const accuracy = (mainOctantFraction / (mainOctantFraction + secondaryOctantFraction)) * 100
 
     const fpTableHeader = [t('test:result_page.main_features'), t('test:result_page.revealed')]
-
-    const accuracy = (mainOctantFraction / (mainOctantFraction + secondaryOctantFraction)) * 100
-    console.log('main', mainOctantFraction)
-    console.log('sec', secondaryOctantFraction)
-
-    console.log('acc', accuracy)
 
     if (!isPassed) {
         return (
