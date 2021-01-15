@@ -86,7 +86,7 @@ const Result: React.FC<ResultProps> = ({ t }) => {
     if (!resultForProfile || resultForProfile.length === 0) {
         return (
             <div className="flex-centered" style={{ padding: '3rem' }}>
-                <Link href="/test">
+                <Link href="/">
                     <a>
                         <h4>{t('test:errors.take_the_test')}</h4>
                     </a>
@@ -134,7 +134,7 @@ const Result: React.FC<ResultProps> = ({ t }) => {
     const secondaryOctantFraction: number | null = secondaryPsychoType
         ? getOctantFraction(sortedOctants[1], sortedOctants)
         : null
-    const accuracy = (mainOctantFraction / (mainOctantFraction + secondaryOctantFraction)) * 100
+    const accuracy = Math.round((mainOctantFraction / (mainOctantFraction + secondaryOctantFraction)) * 100)
 
     const fpTableHeader = [t('test:result_page.main_features'), t('test:result_page.revealed')]
 
