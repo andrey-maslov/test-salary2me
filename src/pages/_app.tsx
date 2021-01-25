@@ -10,6 +10,7 @@ import ScrollToTop from '../components/common/ScrollToTop'
 import { getCookie } from '../helper/cookie'
 import CookieConsent from '../components/layout/modals/cookie-consent/CookieConsent'
 
+
 function MyApp({ Component, pageProps, isConsented }) {
     const store = useStore(pageProps.initialReduxState)
 

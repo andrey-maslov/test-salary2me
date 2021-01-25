@@ -75,7 +75,7 @@ const template = (img, testData) => {
                     <img class="image" src="${img}" alt="">
                 </div>
                 <div class="main-desc">
-                    <img class="image" src="http://localhost:5000/img/famous/${testData.famous.picture}.png" alt="famous">
+                    <img class="image" src="http://localhost:3008/img/famous/${testData.famous.picture}.png" alt="famous">
                     <div class="famous-desc">
                         <div class="famous-name">${testData.famous.person}</div>
                         <div class="famous-text">${testData.psychoTypeDesc}</div>

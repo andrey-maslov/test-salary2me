@@ -78,6 +78,21 @@ const Result: React.FC<ResultProps> = ({ t }) => {
         }
     }, [terms, descriptions])
 
+    useEffect(() => {
+        if (isReady) {
+            dispatch({
+                type: PSYCHO_RESULT,
+                dataForPDF: {
+                    fullProfileData,
+                    portraitDesc,
+                    famous,
+                    secondaryPortraitDesc,
+                    psychoTypeDesc
+                }
+            })
+        }
+    }, [isReady])
+
     // TODO check this!
     if (!isReady) {
         return <Loader />
