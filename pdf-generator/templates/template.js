@@ -6,8 +6,31 @@ const template = (img, testData) => {
           <meta charset="utf-8">
           <title>PDF Result Template</title>
            <style>
+           
+           body {
+             font-family: 'PT Sans', 'sans-serif';
+           }
            h2 {
                 margin-top: 0;
+            }
+            .header {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               margin-bottom: 1rem;
+               padding-bottom: 1rem;
+               border-bottom: 1px solid rgba(0,0,0, .1);
+            }
+            .header img {
+                height: 26px;
+            }
+            .header a {
+                color: #36A9E0;
+                max-width: 300px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: .8rem;
             }
             
             .wrapper {
@@ -58,6 +81,9 @@ const template = (img, testData) => {
                 padding: 5px 10px;
                 font-size: 13px;
             }
+            table td:first-child {
+                min-width: 210px;
+            }
             .box table, .box td, .box h3 {
                 color: #333;
             }
@@ -68,14 +94,20 @@ const template = (img, testData) => {
        </head>
        <body>
           <div class="wrapper">
+          <div class="header">
+            <img src="http://localhost:3008/img/salary_logo_thin.svg">
+            <a href="https://test.salary2.me">
+                test.salary2.me
+            </a>
+          </div>
           <h2 class="justify-center">Ваш психологический профиль</h2>
             
             <div class="top">
                 <div class="radar">
-                    <img class="image" src="${img}" alt="">
+                    <img class="image" src="${img}">
                 </div>
                 <div class="main-desc">
-                    <img class="image" src="http://localhost:3008/img/famous/${testData.famous.picture}.png" alt="famous">
+                    <img class="image" src="http://localhost:3008/img/famous/${testData.famous.picture}.png">
                     <div class="famous-desc">
                         <div class="famous-name">${testData.famous.person}</div>
                         <div class="famous-text">${testData.psychoTypeDesc}</div>
@@ -112,7 +144,9 @@ const template = (img, testData) => {
 
 // const image = './test.png'
 //
-// const wrapper = document.getElementById('root')
-// wrapper.innerHTML = template(image, data)
+// if (typeof window !== 'undefined') {
+//     const wrapper = document.getElementById('root')
+//     wrapper.innerHTML = template(image, data)
+// }
 
 module.exports = template

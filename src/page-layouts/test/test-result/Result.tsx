@@ -94,7 +94,7 @@ const Result: React.FC<ResultProps> = ({ t }) => {
     }, [isReady])
 
     // TODO check this!
-    if (!isReady) {
+    if (!isReady || !terms) {
         return <Loader />
     }
 
@@ -155,7 +155,7 @@ const Result: React.FC<ResultProps> = ({ t }) => {
 
     if (!isPassed) {
         return (
-            <div className="flex-centered center-xs">
+            <div className="flex-centered center-xs" style={{ marginBottom: '6rem' }}>
                 <div className="col-lg-8">
                     <div
                         style={{ display: 'flex', justifyContent: 'center', marginBottom: '4rem' }}>
@@ -165,7 +165,7 @@ const Result: React.FC<ResultProps> = ({ t }) => {
                         {t('test:errors.test_failed')}
                     </div>
                     <Link href="/questions">
-                        <a className="btn btn-outlined">{t('test:result_page.again')}</a>
+                        <a className="btn btn-accent">{t('test:result_page.again')}</a>
                     </Link>
                 </div>
             </div>

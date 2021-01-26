@@ -51,10 +51,7 @@ function HelpUs({ t }) {
 
     return (
         <div ref={containerRef} className={style.section}>
-            <div
-                className={`${
-                    biggerThan992 && fixedClass === '' && canBeFixed ? style[fixedClass] : ''
-                }`}>
+            <div>
                 <div className={style.close}>
                     <ButtonClose handle={closeFixedBlock} />
                 </div>

@@ -66,9 +66,8 @@ const ExportResult: React.FC<ExportResultProps> = ({ data, t }) => {
                 }
             )
             .then(res => {
-                const fileName = email.split('@')[0].replace('.', '-')
                 const fileBlob = new Blob([res.data], { type: 'application/pdf' })
-                saveAs(fileBlob, `${fileName}-profile.pdf`)
+                saveAs(fileBlob, `psychological-profile.pdf`)
             })
             .catch(err => console.error(err))
             .finally(() => setLoading(false))
